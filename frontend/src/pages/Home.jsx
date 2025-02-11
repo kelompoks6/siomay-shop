@@ -39,30 +39,42 @@ const Home = () => {
         
         <Navbar />
 
-        <div style={{ padding: "20px" }}>
+        <div style={{ display: "flex", flexDirection:"column", minHeight: "100vh" }}>
+            <div style={{ flex: "1", padding: "10px" }}>
             <Title level={2}>Product List</Title>
-            <Row gutter={[16, 16]}>
+            <Row gutter={[10, 10]}>
                 {products.map((product) => (
-                    <Col span={8} key={product.id}>
+                    <Col xs={24} sm={12} md={8} lg={6} xl={4} key={product.id}>
                         <Card
                             hoverable
-                            cover={<img alt={product.name} src={product.thumbnail} />}>
+                            style={{ width: '100%', margin: '10px', borderRadius: '20px', background: '#DDD9D0' }}
+                            cover={
+                            <img 
+                            alt={product.name} 
+                            src={product.thumbnail} 
+                            style={{ width: '100%', height: '180px', objectFit: 'cover'}}
+                            className="mb-1 rounded-md"/>}>
                             <Card.Meta
                             title={product.name}
-                            description={`Rp ${product.price}`}
+                            description={`Rp ${product.price} / pcs `}
+                            className="text-center text-2xl font-semibold mb-2"
                             />
                             <Button
                             type='primary'
-                            icon={<ShoppingCartOutlined />}
-                            style={{ marginTop: "10px" }}
+                            style={{ marginTop: "10px", backgroundColor: '#E39F0E' }}
+                            className="px-5 text-black"
                             // onclick={() => handleAddTocart(product)}
                             >
-                            <Link to={`/checkout/${product._id}`}>Checkout Now</Link>
+                            <Link to={`/lihatproduct/${product._id}`}>Lihat Produk</Link>
                             </Button>
+                            <Link to={`/checkout/${product._id}`}>
+                                <ShoppingCartOutlined className="px-3" style={{ fontSize: '25px' }} />
+                            </Link>
                         </Card>
                     </Col>
                 ))}
             </Row>
+            </div>
         </div>
 
         <Footer />

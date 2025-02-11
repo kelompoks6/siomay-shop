@@ -10,6 +10,7 @@ import AddProduct from "./pages/dashboard/ProductCreate";
 import Checkout from "./pages/Checkout";
 import Home from "./pages/Home";
 import UpdateProduct from "./pages/dashboard/ProductUpdate2";
+import LihatProduct from "./pages/LihatProduct";
 
 const { Header, Content } = Layout;
 
@@ -27,6 +28,7 @@ const App = () => {
         <Route path='/' element={<Home />} />
         <Route path='/checkout/:id' element={<Checkout />} />
         <Route path='/signin' element={<Login />} />
+        <Route path='/lihatproduct/:id' element={<LihatProduct />} />
 
         {/* Protected Routes - Dashboard */}
         <Route

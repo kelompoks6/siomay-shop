@@ -49,8 +49,8 @@ const Footer = () => {
                 <div className="text-left">
                 <div className="align-left">
                     <div className="">
-                        <h2 className="text-2xl font-semibold text-color4">NGULARAN</h2>
-                        <h2 className="text-5xl font-semibold text-color4 mb-4">SHOP</h2>
+                        <h2 className="text-2xl font-semibold text-color2">NGULARAN</h2>
+                        <h2 className="text-5xl font-semibold text-color2 mb-4">SHOP</h2>
                     </div>
                      <p className="font-semibold">
                         Ngularan adalah salah satu nama tempat di wilayah<br/>
