@@ -11,6 +11,7 @@ import Checkout from "./pages/Checkout";
 import Home from "./pages/Home";
 import UpdateProduct from "./pages/dashboard/ProductUpdate2";
 import LihatProduct from "./pages/LihatProduct";
+import Keranjang from "./pages/Keranjang";
 
 const { Header, Content } = Layout;
 
@@ -29,6 +30,7 @@ const App = () => {
         <Route path='/checkout/:id' element={<Checkout />} />
         <Route path='/signin' element={<Login />} />
         <Route path='/lihatproduct/:id' element={<LihatProduct />} />
+        <Route path='/keranjang/:id' element={<Keranjang />} />
 
         {/* Protected Routes - Dashboard */}
         <Route

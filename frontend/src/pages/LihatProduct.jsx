@@ -34,7 +34,7 @@ const LihatProduct = () => {
                         <img
                             alt="product"
                             src={product?.thumbnail}
-                            style={{ width: '80%', height: '225px', objectFit: 'cover' }}
+                            style={{ width: '100%', height: '350px', objectFit: 'cover' }}
                             className="mb-1 rounded-md"
                         />
                     </Col>

@@ -67,7 +67,7 @@ const Home = () => {
                             >
                             <Link to={`/lihatproduct/${product._id}`}>Lihat Produk</Link>
                             </Button>
-                            <Link to={`/checkout/${product._id}`}>
+                            <Link to={`/keranjang/${product._id}`}>
                                 <ShoppingCartOutlined className="px-3" style={{ fontSize: '25px' }} />
                             </Link>
                         </Card>
