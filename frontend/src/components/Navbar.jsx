@@ -22,7 +22,7 @@ const Navbar = () => {
                     </div>
 
                     {/* Navigasi ke halaman keranjang (ShoppingCart) */}
-                    <Link to="">
+                    <Link to="/cart">
                         <Button
                             type="link"
                             icon={<ShoppingCartOutlined className="text-black text-2xl" />}

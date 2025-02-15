@@ -3,7 +3,7 @@ import { Card, Button, Input, Col, Row } from "antd";
 import { ShoppingCartOutlined } from "@ant-design/icons";
 import axios from "axios";
 import { URL_PRODUCT } from "../utils/Endpoint";
-import { useParams, useNavigate } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 
@@ -17,20 +17,15 @@ const LihatProduct = () => {
         axios.get(`${URL_PRODUCT}/${id}`)
             .then((res) => setProduct(res.data))
             .catch((err) => console.log("err", err.response));
-    }, []);
-
-    const handleBuyNow = () => {
-        navigate(`/checkout/${id}`, { state: { product, quantity } });
-    };
+    }, [id]);
 
     return (
         <>
-
             <Navbar />
 
             <div style={{ padding: "40px", backgroundColor: "#F8F8F8" }}>
                 <Row gutter={32} align="middle" justify="center" style={{ backgroundColor: '#FBECD3', padding: '50px' }}>
-                    <Col span={10} style={{ textAlign: "center" }}>
+                    <Col span={10} style={{ textAlign: "center", marginRight: '200px' }}>
                         <img
                             alt="product"
                             src={product?.thumbnail}
@@ -49,18 +44,21 @@ const LihatProduct = () => {
                             <Button onClick={() => setQuantity(quantity + 1)} style={{ margin: "0 10px" }}>+</Button>
                         </div>
                         <h3 style={{ fontSize: "24px", fontWeight: "bold" }} >Total: Rp {product?.price * quantity}</h3>
-                        <Button type="primary" icon={<ShoppingCartOutlined />} style={{ marginRight: "15px", fontSize: "18px", padding: "10px 20px" }}>
-                            Masukkan Keranjang
-                        </Button>
-                        <Button type="primary" danger onClick={handleBuyNow} style={{ fontSize: "18px", padding: "10px 20px" }}>
-                            Beli Sekarang
-                        </Button>
+                        <a href={`/cart?product=${id}&quantity=${quantity}`}>
+                            <Button type="primary" icon={<ShoppingCartOutlined />} style={{ marginRight: "15px", fontSize: "18px", padding: "10px 20px" }}>
+                                Masukkan Keranjang
+                            </Button>
+                        </a>
+                        <a href={`/checkout/${id}?quantity=${quantity}`}>
+                            <Button type="primary" danger style={{ fontSize: "18px", padding: "10px 20px" }}>
+                                Beli Sekarang
+                            </Button>
+                        </a>
                     </Col>
                 </Row>
             </div>
 
             <Footer />
-
         </>
     );
 };
