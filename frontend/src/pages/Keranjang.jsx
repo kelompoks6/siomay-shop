@@ -49,7 +49,7 @@ const Keranjang = () => {
         <>
             <Navbar />
             <div style={{ padding: "20px" }}>
-                <h1>Keranjang Belanja</h1>
+                <h1 style={{ fontSize: '35px' }}>Keranjang Belanja</h1>
                 <Row gutter={16} style={{ backgroundColor: "#DDD9D0", padding: "10px", borderRadius: "10px" }}>
                     <Col span={24}>
                         {cartItems.length > 0 ? (
