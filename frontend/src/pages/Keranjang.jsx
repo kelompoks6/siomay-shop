@@ -112,7 +112,7 @@ const Keranjang = () => {
                         <strong>Rp {totalAmount}</strong>
                     </Col>
                     <Col span={2}>
-                        <a href={`/checkout/${id}`}>
+                        <a href={`/checkout/${id}?quantity=${quantity}`}>
                         <Button type='primary'>Checkout</Button>
                         </a>
                     </Col>

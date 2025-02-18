@@ -92,9 +92,7 @@ const Checkout = () => {
                             <p><strong>Product Name:</strong> {product?.name}</p>
                             <p><strong>Price:</strong> Rp {product?.price}</p>
                             <p><strong>Quantity:</strong> 
-                                <Button onClick={() => setQuantity(quantity - 1)} disabled={quantity <= 1} style={{ margin: "0 10px" }}>-</Button>
                                 <Input value={quantity} style={{ width: "60px", textAlign: "center" }} readOnly />
-                                <Button onClick={() => setQuantity(quantity + 1)} style={{ margin: "0 10px" }}>+</Button>
                             </p>
                             <Divider />
                             <p><strong>Total Amount:</strong> Rp {product?.price * quantity}</p>
