@@ -50,10 +50,12 @@ const LihatProduct = () => {
                             </Button>
                         </a>
                         <a href={`/checkout/${id}?quantity=${quantity}`}>
-                            <Button type="primary" danger style={{ fontSize: "18px", padding: "10px 20px" }}>
-                                Beli Sekarang
-                            </Button>
-                        </a>
+                     <Button type="primary" danger style={{ fontSize: "18px", padding: "10px 20px" }}>
+                     Beli Sekarang
+                     </Button>
+                    </a>
+
+                    
                     </Col>
                 </Row>
             </div>
