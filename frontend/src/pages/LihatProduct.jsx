@@ -44,18 +44,16 @@ const LihatProduct = () => {
                             <Button onClick={() => setQuantity(quantity + 1)} style={{ margin: "0 10px" }}>+</Button>
                         </div>
                         <h3 style={{ fontSize: "24px", fontWeight: "bold" }} >Total: Rp {product?.price * quantity}</h3>
-                        <a href={`/cart?product=${id}&quantity=${quantity}`}>
-                            <Button type="primary" icon={<ShoppingCartOutlined />} style={{ marginRight: "15px", fontSize: "18px", padding: "10px 20px" }}>
+                        <a href={`/keranjang/${id}`}>
+                            <Button type="primary" icon={<ShoppingCartOutlined />} style={{ marginRight: "15px", fontSize: "18px", padding: "10px 20px", backgroundColor: '#E39F0E' }} className="px-5 text-black">
                                 Masukkan Keranjang
                             </Button>
                         </a>
                         <a href={`/checkout/${id}?quantity=${quantity}`}>
-                     <Button type="primary" danger style={{ fontSize: "18px", padding: "10px 20px" }}>
+                     <Button type="primary" danger style={{ fontSize: "18px", padding: "10px 20px", backgroundColor: '#E39F0E' }} className="px-5 text-black">
                      Beli Sekarang
                      </Button>
                     </a>
-
-                    
                     </Col>
                 </Row>
             </div>

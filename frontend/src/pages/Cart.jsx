@@ -13,6 +13,8 @@ import {
 import axios from "axios";
 import { URL_PRODUCT } from "../utils/Endpoint";
 import { Link } from "react-router-dom";
+import Navbar from "../components/Navbar";
+import Footer from "../components/Footer";
 
 const Cart = () => {
     const [cartItems, setCartItems] = useState([]);
@@ -42,6 +44,10 @@ const Cart = () => {
     const totalAmount = cartItems.reduce((total, item) => total + (item.price * (item.quantity || 1)), 0);
 
     return (
+
+        <>
+        <Navbar />
+
         <div style={{ padding: "20px" }}>
             <h1>Keranjang Belanja</h1>
             <Row gutter={16} style={{ backgroundColor: "#f8e5be", padding: "10px", borderRadius: "10px" }}>
@@ -108,12 +114,15 @@ const Cart = () => {
                     <strong>Rp {totalAmount}</strong>
                 </Col>
                 <Col span={2}>
-                    <Link to="/checkoutall">
+                    <Link to="/checkout1">
                         <Button type='primary'>Checkout</Button>
                     </Link>
                 </Col>
             </Row>
         </div>
+
+        <Footer />
+        </>
     );
 };
 
