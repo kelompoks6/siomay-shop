@@ -3,7 +3,7 @@ import { Card, Button, Input, Col, Row } from "antd";
 import { ShoppingCartOutlined } from "@ant-design/icons";
 import axios from "axios";
 import { URL_PRODUCT } from "../utils/Endpoint";
-import { useParams } from "react-router-dom";
+import { useParams, Link } from "react-router-dom";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 
@@ -44,16 +44,16 @@ const LihatProduct = () => {
                             <Button onClick={() => setQuantity(quantity + 1)} style={{ margin: "0 10px" }}>+</Button>
                         </div>
                         <h3 style={{ fontSize: "24px", fontWeight: "bold" }} >Total: Rp {product?.price * quantity}</h3>
-                        <a href={`/keranjang/${id}`}>
+                        <Link to={`/keranjang/${id}`}>
                             <Button type="primary" icon={<ShoppingCartOutlined />} style={{ marginRight: "15px", fontSize: "18px", padding: "10px 20px", backgroundColor: '#E39F0E' }} className="px-5 text-black">
                                 Masukkan Keranjang
                             </Button>
-                        </a>
-                        <a href={`/checkout/${id}?quantity=${quantity}`}>
-                     <Button type="primary" danger style={{ fontSize: "18px", padding: "10px 20px", backgroundColor: '#E39F0E' }} className="px-5 text-black">
-                     Beli Sekarang
-                     </Button>
-                    </a>
+                        </Link>
+                        <Link to={`/checkout/${id}?quantity=${quantity}`}>
+                            <Button type="primary" danger style={{ fontSize: "18px", padding: "10px 20px", backgroundColor: '#E39F0E' }} className="px-5 text-black">
+                                Beli Sekarang
+                            </Button>
+                        </Link>
                     </Col>
                 </Row>
             </div>
