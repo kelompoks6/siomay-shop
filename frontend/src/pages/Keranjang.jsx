@@ -95,13 +95,13 @@ const Keranjang = () => {
                         <strong>Rp {totalAmount}</strong>
                     </Col>
                     <Col span={2}>
-                        {cartItem && (
-                            <Link to={`/checkout/${cartItem.id}`}>
+                        
+                            <Link to={`/checkout1`}>
                                 <Button type="primary" danger style={{ fontSize: "18px", padding: "10px 20px", backgroundColor: '#E39F0E' }} className="px-5 text-black">
                                     Checkout
                                 </Button>
                             </Link>
-                        )}
+                     
                     </Col>
                 </Row>
             </div>

@@ -13,6 +13,7 @@ import UpdateProduct from "./pages/dashboard/ProductUpdate2";
 import LihatProduct from "./pages/LihatProduct";
 import Keranjang from "./pages/Keranjang";
 import Cart from "./pages/Cart";
+import Checkout1 from "./pages/Checkout1";
 
 const { Header, Content } = Layout;
 
@@ -33,6 +34,7 @@ const App = () => {
         <Route path='/lihatproduct/:id' element={<LihatProduct />} />
         <Route path='/keranjang/:id' element={<Keranjang />} />
         <Route path="/cart" element={<Cart />} />
+        <Route path="/checkout1" element={<Checkout1/>} />
 
         {/* Protected Routes - Dashboard */}
         <Route
